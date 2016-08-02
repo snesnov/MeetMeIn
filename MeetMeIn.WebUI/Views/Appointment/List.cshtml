@@ -1,0 +1,28 @@
+﻿@using MeetMeIn.Domain.Entities;
+@model IEnumerable<Appointment>
+
+@{
+    ViewBag.Title = "Appontments";
+}
+
+@foreach (var apnt in Model)
+{
+    <div>
+        <h3>ID: @apnt.AppointmentID</h3>            
+        <h2>Time: @apnt.DateTime.ToString("g")</h2>
+                
+        @if(!String.IsNullOrEmpty(apnt.Name))
+        {
+            <div>@apnt.Name</div>
+        }
+                
+        @if (!String.IsNullOrEmpty(apnt.Location))
+        {
+            <div>@apnt.Location</div>
+        }
+    </div>
+}
+
+
+
+

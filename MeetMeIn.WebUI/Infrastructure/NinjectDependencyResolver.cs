@@ -31,12 +31,12 @@ namespace MeetMeIn.WebUI.Infrastructure
 
         private void AddBindings()
         {
-            kernel.Bind<IAppointmentsRepository>().ToConstant(GetMockedAppointmentRepository());
+            kernel.Bind<IAppointmentRepository>().ToConstant(GetMockedAppointmentRepository());
         }
 
-        private IAppointmentsRepository GetMockedAppointmentRepository()
+        private IAppointmentRepository GetMockedAppointmentRepository()
         {
-            Mock<IAppointmentsRepository> mock = new Mock<IAppointmentsRepository>();
+            Mock<IAppointmentRepository> mock = new Mock<IAppointmentRepository>();
 
             mock.Setup(m => m.Appointments).Returns(new List<Appointment> { 
                 new Appointment {

@@ -3,7 +3,7 @@ using MeetMeIn.Domain.Entities;
 
 namespace MeetMeIn.Domain.Abstract
 {
-    public interface IAppointmentsRepository
+    public interface IAppointmentRepository
     {
         IEnumerable<Appointment> Appointments { get; }
     }
