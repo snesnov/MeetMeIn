@@ -1,0 +1,23 @@
+﻿@using MeetMeIn.Domain.Entities;
+@model Appointment
+
+@{
+    ViewBag.Title = "Create appointment";
+}
+
+<h2>Create appointment</h2>
+
+@using (Html.BeginForm())
+{
+    <p>When: @Html.EditorFor(x => x.DateTime)</p>
+
+    <p>Where: @Html.TextBoxFor(x => x.Location)</p>
+    <p>You: @Html.TextBoxFor(x => x.Organizer)</p>
+    <p>Participants: @Html.TextBoxFor(x => x.Attandees)</p>
+    
+    <p>Name: @Html.TextBoxFor(x => x.Name)</p>
+    <p>Description: @Html.TextBoxFor(x => x.Description)</p>
+    
+    <input type="submit" value="Submit appointment" />
+}
+

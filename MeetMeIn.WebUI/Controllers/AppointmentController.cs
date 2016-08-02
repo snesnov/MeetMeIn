@@ -21,5 +21,20 @@ namespace MeetMeIn.WebUI.Controllers
         {
             return View(repository.Appointments);
         }
+
+        [HttpGet]
+        public ViewResult Create()
+        {
+            return View(new Appointment());
+        }
+
+        [HttpPost]
+        public ViewResult Create(Appointment appointment)
+        {
+            appointment.Create();
+            repository.Appointments.ToList().Add(appointment);
+
+            return View("Summary", appointment);
+        }
     }
 }

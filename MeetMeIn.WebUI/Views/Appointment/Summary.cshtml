@@ -1,0 +1,43 @@
+﻿@using MeetMeIn.Domain.Entities;
+@model Appointment
+
+@{
+    ViewBag.Title = "Appointment";
+}
+
+<h3>Congratulations! Appointment is created.</h3>
+
+<h2>Use an ID below to access created appointment:</h2>
+
+<h1>@Html.DisplayTextFor(x => x.AppointmentID)</h1>
+
+@if (Model.DateTime != null)
+{
+    <p>When: @Html.DisplayFor(x => x.DateTime)</p>
+}
+
+@if (!String.IsNullOrEmpty(Model.Location))
+{
+    <p>Where: @Html.DisplayTextFor(x => x.Location)</p>
+}
+
+@if (!String.IsNullOrEmpty(Model.Name))
+{
+    <p>Name: @Html.DisplayTextFor(x => x.Name)</p>
+}
+
+@if (!String.IsNullOrEmpty(Model.Organizer))
+{
+    <p>Organizer: @Html.DisplayTextFor(x => x.Organizer)</p>
+}
+
+@if (Model.Attandees != null && Model.Attandees.Count() > 0)
+{
+    <p>Participants: @Html.DisplayTextFor(x => x.Attandees)</p>
+}
+
+@if (!String.IsNullOrEmpty(Model.Description))
+{
+    <p>Description: @Html.DisplayTextFor(x => x.Description)</p>
+}
+
